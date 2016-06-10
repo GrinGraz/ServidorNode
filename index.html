@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+  var socket = io();
+  $(document).ready(function(){
+  	$(".btn").click(function(){
+  		var mensaje = $(this).data("mensaje");
+  		socket.emit("mensaje",mensaje);
+  	});
+  });
+</script>
+<button class="btn" data-mensaje="accion 1">Accion 1</button>
+<button class="btn" data-mensaje="accion 2">Accion 2</button>
+</body>
+</html>
