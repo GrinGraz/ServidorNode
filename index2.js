@@ -11,8 +11,17 @@ io.on('connection', function(socket){
 
 	socket.on("mensaje",function(mensaje){
 		console.log(mensaje);
-		io.emit("android",{"mensaje": mensaje});
+		socket.emit("nueva pregunta",{"mensaje": mensaje});
+		console.log(mensaje);
 	});
+
+	/*socket.on('mensaje', function (mensaje) {
+		console.log(mensaje);
+    // we tell the client to execute 'new message'
+    	io.emit('nueva pregunta', {
+      pregunta: mensaje
+    });
+  });*/
 });
 
 http.listen(3000, function(){

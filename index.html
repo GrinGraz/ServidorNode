@@ -11,6 +11,10 @@
   	$(".btn").click(function(){
   		var mensaje = $(this).data("mensaje");
   		socket.emit("mensaje",mensaje);
+  		console.log(mensaje);
+  	});
+  	socket.on("nueva pregunta", function(data){
+  		console.log(data);
   	});
   });
 </script>
